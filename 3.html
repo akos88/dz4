@@ -30,8 +30,21 @@
 -->
 <script>
   "use strict";
+//
+   function getDigitsOfNumber(num) {
+    if (!Number.isInteger(num) || num < 0 || num > 999) {
+      console.error('Wrong argument, it must be an integer in range [0, 999].');
+      return {};
+    }
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
+    return {
+      units: num % 10,
+      dozens: Math.floor(num / 10) % 10,
+      hundreds: Math.floor(num / 100),
+    };
+  }
+
+  console.log(getDigitsOfNumber(123));
 </script>
 </body>
 </html>
